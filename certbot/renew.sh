@@ -1,5 +1,7 @@
 # Sleep to avoid running on any exact time
-sleep "$(awk 'BEGIN{srand(); print int(rand()*(3600+1))}')"
+SECONDS="$(awk 'BEGIN{srand(); print int(rand()*(3600+1))}')"
+echo "Sleeping for $SECONDS seconds"
+sleep $SECONDS
 
 docker run -it --rm --name certbot \
         -v "/etc/letsencrypt:/etc/letsencrypt" \
