@@ -1,3 +1,5 @@
+echo
+date
 # Sleep to avoid running on any exact time
 SECONDS="$(awk 'BEGIN{srand(); print int(rand()*(3600+1))}')"
 echo "Sleeping for $SECONDS seconds"
